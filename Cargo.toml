@@ -1,0 +1,25 @@
+[package]
+name = "pulldown-cmark-wasm"
+version = "0.1.0"
+authors = ["Till Schneidereit <till@tillschneidereit.net>"]
+description = "A WebAssembly wrapper for pulldown-cmark, a pull parser for CommonMark (i.e. Markdown)"
+repository = "https://github.com/tschneidereit/pulldown-cmark-wasm"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = []
+
+[profile.release]
+lto = true
+opt-level = "s"
+
+[dependencies]
+cfg-if = "0.1.2"
+wasm-bindgen = "0.2"
+console_error_panic_hook = { version = "0.1.1", optional = true }
+wee_alloc = { version = "0.4.1", optional = true }
+
+pulldown-cmark = "0.1.2"
