@@ -9,6 +9,7 @@ use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub fn format(markdown: &str) -> String {
+    utils::set_panic_hook();
     let mut html_buf = String::new();
     let parser = Parser::new(markdown);
     html::push_html(&mut html_buf, parser);
