@@ -4,3 +4,4 @@
 wasm-pack.log
 **/*.rs.bk
 Cargo.lock
+.crates.toml
